@@ -46,7 +46,7 @@ public class Product {
         this.unitPrice = unitPrice;
     }
     
-    public double getDiscount(double quantity) {
+    public double getDiscountAmount(double quantity) {
         discount.setUnitPrice(unitPrice);
         discount.setQuantity(quantity);
         return discount.getDiscountAmount();
@@ -54,15 +54,16 @@ public class Product {
 
     @Override
     public String toString() {
-        return "Product{" + "productId=" + productId + ", description=" + description + ", unitPrice=" + unitPrice + ", discount=" + discount + '}';
+        return "Product{" + "productId=" + productId + ", description=" + description + ", unitPrice="
+                + unitPrice + ", discount=" + discount.getDiscountAmount() + '}';
     }
     
-    public static void main(String[] args) {
-        
-        Product product = new Product("12345", "hat", 10.00, new ClearanceDiscount());
-        
-        double amt = product.getDiscount(6);
-        
-        System.out.println("The discount is $" + amt);        
-    }
+//    public static void main(String[] args) {
+//        
+//        Product product = new Product("12345", "hat", 10.00, new ClearanceDiscount());
+//        
+//        double amt = product.getDiscountAmount(6);
+//        
+//        System.out.println("The discount is $" + amt);        
+//    }
 }

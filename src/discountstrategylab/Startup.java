@@ -16,7 +16,7 @@ public class Startup {
         cr.scanItem("24680", 5);
         cr.scanItem("36912", 7);
         
-        cr.printReciept();
+        cr.printReceipt();
 
     }
 }

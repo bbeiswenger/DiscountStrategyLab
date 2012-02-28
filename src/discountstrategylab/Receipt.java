@@ -9,38 +9,38 @@ import java.util.ArrayList;
  */
 public class Receipt {
     
-    private double      total,
+    private double      totalDiscount,
+                        grandTotal,
                         subtotal;
     private Customer    customer;
     private LineItem    lineItem;
     
     private Customer[] customers = {
-        new Customer("B51015", "Steve", "Black"),
-        new Customer("L61218", "Susan", "Lane"),
-        new Customer("S71421", "Mary", "Smith")
+        new Customer("51015", "Steve", "Black"),
+        new Customer("61218", "Susan", "Lane"),
+        new Customer("71421", "Mary", "Smith")
     };
 
     private LineItem[] lineItems = new LineItem[0];
     
-    public double getTotal() {
+    public double getGrandTotal() {
         
         for(LineItem li : lineItems) {
-            total += lineItem.getSubtotal();
+            grandTotal += lineItem.getSubtotal();
         }
-        return total;
+        return grandTotal;
     }
 
-    public void setTotal(double total) {
-        this.total = total;
+    public double getTotalDiscountAmount() {
+        for(LineItem li : lineItems){
+            totalDiscount += lineItem.getDiscountAmount();
+        }
+        return totalDiscount;
     }
-
+    
     public Customer getCustomer() {
         return customer;
     }
-
-    public void setCustomer(Customer customer) {
-        this.customer = customer;
-    }    
     
     public void addNewLineItem(String productId, double quantity) {
         LineItem lineItem = new LineItem(productId, quantity);
@@ -71,8 +71,7 @@ public class Receipt {
         lineItems = temp;
     }
 
-    // Normally you would not make this static!!
-    // Here's a method that encapsulates the logic for removing an item
+    // Remove line item from array
     public void removeLineItem(LineItem lineItem) {
         LineItem[] temp = new LineItem[lineItems.length - 1];
 
@@ -89,7 +88,8 @@ public class Receipt {
         lineItems = temp;
     }
     
-    public void printReciept(){
+    public void printReceipt(){
+        customer.toString();
         for (LineItem item : lineItems) {
             System.out.println(lineItem.getLineItem());
         }
@@ -99,6 +99,7 @@ public class Receipt {
         
         Customer customer = new Customer("B51015", "Steve", "Black");
         System.out.println(customer);
+        
     }    
     
 }

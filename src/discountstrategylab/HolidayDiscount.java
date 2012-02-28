@@ -45,16 +45,16 @@ public class HolidayDiscount implements DiscountStrategy {
         this.percentOff = percentOff;
     }
 
-//    public static void main(String[] args) {
-//        
-//        DiscountStrategy discount = new HolidayDiscount();
-//        discount.setUnitPrice(20.00);
+    public static void main(String[] args) {
+        
+        DiscountStrategy discount = new HolidayDiscount();
+        discount.setUnitPrice(20.00);
 //        discount.setPercentOff(.10);
-//        discount.setQuantity(1);
-//        
-//        double amt = discount.getDiscountAmount();
-//        
-//        System.out.println("The discount is " + amt);        
-//    }
+        discount.setQuantity(1);
+        
+        double amt = discount.getDiscountAmount();
+        
+        System.out.println("The discount is " + amt);        
+    }
 
 }

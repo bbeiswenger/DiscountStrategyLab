@@ -16,12 +16,17 @@ public class CashRegister {
         receipt.addNewLineItem(productId, quantity);
     }
     
-    public void printReciept() {
-        receipt.printReciept();
+    public void printReceipt() {
+        receipt.printReceipt();
     }
     
-    private Product[] products = {};
-    
+    public static void main(String[] args) {
+        Receipt receipt = new Receipt();
+        
+        receipt.startNewSale("51015");
+        System.out.println();
+        
+    }
  
     
 }
