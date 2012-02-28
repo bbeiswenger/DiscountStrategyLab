@@ -1,7 +1,7 @@
 package discountstrategylab;
 
 /**
- *
+ * This is a change
  * @author Barb Beiswenger
  */
 public class Startup {
