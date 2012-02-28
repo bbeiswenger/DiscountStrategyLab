@@ -49,7 +49,7 @@ public class Receipt {
     }
     
     public void startNewSale(String customerNo) {
-        customerNoLookup(customerNo);
+        this.customer = customerNoLookup(customerNo);
     }    
     
     public Customer customerNoLookup(String customerNo) {
@@ -64,7 +64,7 @@ public class Receipt {
         return customer;
     }
         
-public void addLineItem(LineItem lineItem) {
+    private void addLineItem(LineItem lineItem) {
         LineItem[] temp = new LineItem[lineItems.length + 1];
         System.arraycopy(lineItems, 0, temp, 0, lineItems.length);
         temp[temp.length-1] = lineItem;

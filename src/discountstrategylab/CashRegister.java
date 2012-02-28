@@ -11,6 +11,7 @@ public class CashRegister {
      public void startNewSale(String customerNo) {
         receipt.startNewSale(customerNo);
     }
+     
     public void scanItem(String productId, double quantity) {
         receipt.addNewLineItem(productId, quantity);
     }
