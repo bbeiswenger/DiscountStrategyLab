@@ -57,8 +57,6 @@ public class Product {
         return "Product{" + "productId=" + productId + ", description=" + description + ", unitPrice=" + unitPrice + ", discount=" + discount + '}';
     }
     
-    
-    
     public static void main(String[] args) {
         
         Product product = new Product("12345", "hat", 10.00, new ClearanceDiscount());

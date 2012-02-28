@@ -91,7 +91,7 @@ public void addLineItem(LineItem lineItem) {
     
     public void printReciept(){
         for (LineItem item : lineItems) {
-            System.out.println(lineItem);
+            System.out.println(lineItem.getLineItem());
         }
     }
     
