@@ -17,8 +17,6 @@ public class Startup {
         cr.scanItem("36912", 7);
         
         cr.printReciept();
-        
-        //Experimental Branch
 
     }
 }
